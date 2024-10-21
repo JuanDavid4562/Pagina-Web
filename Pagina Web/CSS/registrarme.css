@@ -6,29 +6,42 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #f4f4f4, #e2e2e2);
-    line-height: 1.6;
-    background: url("./IMAGENES/header.jpg");
+    background: url("./IMAGENES/header.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 header {
     background-color: #f4a261;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Change to column */
+    align-items: center; /* Center items */
     padding: 3vh 0;
+    animation: slide-down 1s ease-out;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .logo img {
-    height: 10vh;
-    margin-bottom: 2vh;
+    height: 8vh;
+    margin-bottom: 1rem; /* Add some space below the logo */
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #333;
     text-align: center;
-    margin-bottom: 2vh;
 }
 
 nav ul {
@@ -36,7 +49,8 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 2vw;
-    margin-bottom: 3vh;
+    margin-top: 1rem; /* Add some space above the nav */
+    animation: slideIn 1s ease-out;
 }
 
 nav ul li a {
@@ -44,84 +58,105 @@ nav ul li a {
     color: #333;
     font-size: 1.2rem;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #264653;
 }
 
 .login-container {
-    width: 30vw;
-    margin: 10vh auto;
+    width: 35vw;
+    margin: auto;
     padding: 3vw;
     background-color: #fff;
-    border-radius: 0.5em;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
+    border-radius: 1em;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-gap: 2rem;
+    transition: transform 0.5s, box-shadow 0.5s;
+    animation: fade-in 1.5s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .login-container:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .login-container h2 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 2vh;
+    color: #333;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
 }
 
 label {
-    font-size: 1.2rem;
-    margin-bottom: 0.5vh;
+    font-size: 1.1rem;
+    color: #333;
 }
 
-input {
-    padding: 1vh;
+input, select {
+    padding: 1.2vh;
     font-size: 1rem;
-    margin-bottom: 2vh;
     border: 1px solid #ccc;
     border-radius: 0.5em;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border 0.3s ease;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus {
+input:focus, select:focus {
     border-color: #2a9d8f;
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
 }
 
 button {
-    padding: 1vh;
+    padding: 1.2vh;
     background: linear-gradient(to right, #2a9d8f, #264653);
     color: #fff;
     border: none;
     font-size: 1.2rem;
     border-radius: 0.5em;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background: linear-gradient(to right, #264653, #2a9d8f);
+    transform: translateY(-3px);
 }
 
 p {
     font-size: 1rem;
     text-align: center;
-    margin-top: 2vh;
 }
 
 p a {
     color: #e76f51;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #2a9d8f;
 }
 
 .sexo {
     height: 3em;
     background-color: transparent;
     border-radius: 10px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -130,4 +165,10 @@ footer {
     padding: 2vh;
     color: #333;
     font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 3;
 }
+
+

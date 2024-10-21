@@ -8,7 +8,11 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
-    background: url("./IMAGENES/header.jpg");
+    background: url("./IMAGENES/header.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 header {
@@ -17,11 +21,17 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 3vh 0;
+    animation: fadeIn 1s ease-out;
 }
 
 .logo img {
     height: 10vh;
     margin-bottom: 2vh;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 h1 {
@@ -29,6 +39,7 @@ h1 {
     color: #333;
     text-align: center;
     margin-bottom: 2vh;
+    animation: slideIn 1s ease-out;
 }
 
 nav ul {
@@ -37,6 +48,7 @@ nav ul {
     justify-content: center;
     gap: 2vw;
     margin-bottom: 3vh;
+    animation: slideIn 1s ease-out;
 }
 
 nav ul li a {
@@ -44,6 +56,11 @@ nav ul li a {
     color: #333;
     font-size: 1.2rem;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #264653;
 }
 
 .login-container {
@@ -53,6 +70,15 @@ nav ul li a {
     background-color: #fff;
     border-radius: 0.5em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1vh;
+    animation: fadeIn 1s ease-in;
+}
+
+.login-container:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .login-container h2 {
@@ -63,8 +89,9 @@ nav ul li a {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1vh;
 }
 
 label {
@@ -78,6 +105,12 @@ input {
     margin-bottom: 2vh;
     border: 1px solid #ccc;
     border-radius: 0.5em;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #2a9d8f;
+    background-color: #f0f0f0;
 }
 
 button {
@@ -88,22 +121,12 @@ button {
     font-size: 1.2rem;
     border-radius: 0.5em;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background: linear-gradient(to right, #264653, #2a9d8f);
-}
-
-p {
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 2vh;
-}
-
-p a {
-    color: #e76f51;
-    text-decoration: none;
+    transform: scale(1.05);
 }
 
 footer {
@@ -112,4 +135,26 @@ footer {
     padding: 2vh;
     color: #333;
     font-size: 1rem;
+    animation: fadeIn 1.5s ease-out;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
