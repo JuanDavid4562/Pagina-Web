@@ -16,8 +16,8 @@ body {
 header {
     background-color: #f4a261;
     display: flex;
-    flex-direction: column; /* Change to column */
-    align-items: center; /* Center items */
+    flex-direction: column;
+    align-items: center;
     padding: 3vh 0;
     animation: slide-down 1s ease-out;
 }
@@ -35,7 +35,7 @@ header {
 
 .logo img {
     height: 8vh;
-    margin-bottom: 1rem; /* Add some space below the logo */
+    margin-bottom: 1rem;
 }
 
 h1 {
@@ -49,7 +49,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 2vw;
-    margin-top: 1rem; /* Add some space above the nav */
+    margin-top: 1rem;
     animation: slideIn 1s ease-out;
 }
 

@@ -78,7 +78,6 @@ nav ul li a:hover {
     animation: fadeIn 1s ease-out;
 }
 
-/* Animación de entrada del contenido */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -88,7 +87,6 @@ nav ul li a:hover {
     }
 }
 
-/* Sidebar with Flexbox */
 aside {
     display: flex;
     flex-direction: column;
@@ -139,7 +137,6 @@ aside:hover {
     margin-right: 1vw;
 }
 
-/* Main Content */
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -177,4 +174,3 @@ footer {
     background-color: #264653;
     color: #fff;
 }
-
